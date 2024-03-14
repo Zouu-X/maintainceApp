@@ -1,4 +1,5 @@
 <script setup>
+import { ArrowDown } from '@element-plus/icons-vue'
 import { useAuthStore } from "../store/Auth.store.js";
 const authStore = useAuthStore()
 
@@ -34,6 +35,7 @@ const name = authStore.user.user.username
 
 <style scoped>
 .nav-bar {
+  width: 100vh;
   margin-left: 8px;
   display: flex;
   align-items: center;

@@ -37,6 +37,7 @@ const resetForm = () => {
 </script>
 
 <template>
+  <h2>Login Page</h2>
   <el-form ref="formRef" :model="loginForm" :rules="rules" >
     <el-form-item label="Username" prop="username">
       <el-input v-model="loginForm.username"></el-input>
