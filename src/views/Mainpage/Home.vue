@@ -1,18 +1,13 @@
 <script setup>
 import Navbar from "../../components/Navbar.vue";
 import Sidebar from "../../components/Sidebar.vue";
+import {useAuthStore} from "../../store/Auth.store.js";
+const authStore = useAuthStore()
+const name = authStore.user.user.username
 </script>
 
 <template>
-  <div class="container">
-    <div class="side-left">
-      <sidebar />
-    </div>
-    <div class="side-right">
-      <navbar />
-      <h1>TTTT</h1>
-    </div>
-  </div>
+  <h1>Hi {{ name }}</h1>
 </template>
 
 <style scoped>
