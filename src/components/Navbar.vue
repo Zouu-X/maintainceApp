@@ -35,7 +35,7 @@ const name = authStore.user.user.username
 
 <style scoped>
 .nav-bar {
-  width: 100vh;
+
   margin-left: 8px;
   display: flex;
   align-items: center;

@@ -1,46 +1,47 @@
 <script setup>
-function goToPage(path) {
-  if (this.$route.path !== path) {
-    router.push(path)
-  }
-}
 </script>
 
 <template>
   <div class="sidebar-container">
-
     <el-menu
         background-color="#304156"
         text-color="#bfcbd9"
         active-text-color="#409EFF"
         mode="vertical"
+        :router="true"
     >
-      <el-menu-item @click="goToPage('/main')" index="1">
-        <el-icon :size="size" :color="color">
+      <el-menu-item index="/">
+        <el-icon>
+          <Edit />
+        </el-icon>
+        <span slot="title" class="menu-font">首页</span>
+      </el-menu-item>
+      <el-menu-item index="/work-form">
+        <el-icon>
           <Edit />
         </el-icon>
         <span slot="title" class="menu-font">工单管理</span>
       </el-menu-item>
-      <el-menu-item @click="goToPage('/one')" index="2">
-        <el-icon :size="size" :color="color">
+      <el-menu-item index="/equipment">
+        <el-icon>
           <Edit />
         </el-icon>
         <span slot="title" class="menu-font">设备管理</span>
       </el-menu-item>
-      <el-menu-item @click="goToPage('/two')" index="3">
-        <el-icon :size="size" :color="color">
+      <el-menu-item index="/line">
+        <el-icon>
           <Edit />
         </el-icon>
         <span slot="title" class="menu-font">产线管理</span>
       </el-menu-item>
-      <el-menu-item index="4">
-        <el-icon :size="size" :color="color">
+      <el-menu-item index="/items">
+        <el-icon>
           <Edit />
         </el-icon>
         <span slot="title" class="menu-font">物料管理</span>
       </el-menu-item>
-      <el-menu-item index="5">
-        <el-icon :size="size" :color="color">
+      <el-menu-item index="/personal">
+        <el-icon>
           <Edit />
         </el-icon>
         <span slot="title" class="menu-font">人员管理</span>

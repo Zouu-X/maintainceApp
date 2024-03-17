@@ -13,15 +13,15 @@ import Sidebar from "../../components/Sidebar.vue";
       <h1>TTTT</h1>
     </div>
   </div>
-
-
 </template>
 
 <style scoped>
 .container {
   display: flex;
+  height: 100vh;
 
 }
 .side-right {
+  flex-grow: 1;
 }
 </style>

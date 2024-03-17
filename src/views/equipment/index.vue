@@ -1,8 +1,9 @@
 <script setup>
+
 </script>
 
 <template>
-      <router-view />
+<h1>Here is the equipment page</h1>
 </template>
 
 <style scoped>
