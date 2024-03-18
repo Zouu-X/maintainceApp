@@ -3,11 +3,11 @@ export const Users = [
   {
     username: 'admin',
     password: '123456', // 在实际应用中，密码不应明文存储
-    role: 'admin'
+    role: '管理员'
   },
   {
     username: 'editor',
     password: '123456',
-    role: 'editor'
+    role: '普通用户'
   },
 ];
