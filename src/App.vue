@@ -49,7 +49,9 @@ const showBar = computed(() => route.path !== '/login');
 }
 
 .content-area {
+  background: #f2f2f2; /* 背景颜色 */
   flex-grow: 1;
+  height: 100vh;
 }
 .with-margin {
   margin-left: 140px; /* 与侧边栏宽度相同，确保内容区不被侧边栏遮挡 */

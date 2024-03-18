@@ -3,8 +3,8 @@
 </script>
 
 <template>
-  <el-row>
-    <el-col :span="12">
+  <el-col>
+
       <el-card shadow="hover" :body-style="{ padding: '0px' }">
         <div class="grid-content grid-con-1">
           <el-icon class="grid-con-icon"><User /></el-icon>
@@ -14,8 +14,8 @@
           </div>
         </div>
       </el-card>
-    </el-col>
-    <el-col :span="12">
+
+
       <el-card shadow="hover" :body-style="{ padding: '0px' }">
         <div class="grid-content grid-con-2">
           <el-icon class="grid-con-icon"><ChatDotRound /></el-icon>
@@ -25,8 +25,8 @@
           </div>
         </div>
       </el-card>
-    </el-col>
-  </el-row>
+
+  </el-col>
 </template>
 
 <style scoped>
