@@ -4,6 +4,7 @@
 <template>
   <div class="sidebar-container">
     <el-menu
+        default-active="/"
         background-color="#304156"
         text-color="#bfcbd9"
         active-text-color="#409EFF"
@@ -16,7 +17,7 @@
         </el-icon>
         <span slot="title" class="menu-font">首页</span>
       </el-menu-item>
-      <el-menu-item index="/work-form">
+      <el-menu-item index="/form">
         <el-icon>
           <Edit />
         </el-icon>
@@ -46,7 +47,6 @@
         </el-icon>
         <span slot="title" class="menu-font">人员管理</span>
       </el-menu-item>
-      <!--        <sidebar-item v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" />-->
     </el-menu>
   </div>
 </template>
