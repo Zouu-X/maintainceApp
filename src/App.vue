@@ -11,11 +11,11 @@ const showBar = computed(() => route.path !== '/login');
 
 <template>
   <navbar v-if="showBar" class="fixed-navbar" />
-  <div class="main">
+  <div :class="['main', { 'main-padding': showBar }]">
     <div class="left-side">
       <sidebar v-if="showBar" class="fixed-sidebar" />
     </div>
-    <div class="content-area">
+    <div :class="['content-area', { 'with-margin': showBar }]">
       <router-view />
     </div>
   </div>
@@ -33,6 +33,9 @@ const showBar = computed(() => route.path !== '/login');
 .main {
   display: flex;
   flex-direction: row;
+
+}
+.main-padding {
   padding-top: 50px; /* 假设导航栏高度为60px，以避免内容被遮挡 */
 }
 
@@ -47,6 +50,8 @@ const showBar = computed(() => route.path !== '/login');
 
 .content-area {
   flex-grow: 1;
+}
+.with-margin {
   margin-left: 140px; /* 与侧边栏宽度相同，确保内容区不被侧边栏遮挡 */
 }
 </style>
