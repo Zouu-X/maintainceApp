@@ -55,6 +55,9 @@
 .sidebar-container {
   display: flex;
   height: 100vh;
+  .el-menu {
+    width: 140px;
+  }
 }
 
 .menu-font {
