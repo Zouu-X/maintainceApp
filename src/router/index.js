@@ -3,7 +3,8 @@ import { useAuthStore } from "../store/Auth.store.js";
 import Login from "../views/login/index.vue";
 import Home from "../views/Mainpage/index.vue";
 import Equipment from "../views/equipment/index.vue";
-
+import UserInfo from "../views/Mainpage/components/UserInfo.vue";
+import dataInfo from "../views/Mainpage/components/DataInfo.vue"
 
 
 export const router = createRouter({
@@ -13,7 +14,8 @@ export const router = createRouter({
     { path: '/', component: Home},
     { path: '/login', component: Login},
     { path: '/equipment', component: Equipment},
-    { path: '/:pathMatch(.*)*', redirect: '/' }
+    { path: '/:pathMatch(.*)*', redirect: '/' },
+    { path: '/test', component: dataInfo}
   ]
 });
 

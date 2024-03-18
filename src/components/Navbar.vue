@@ -61,6 +61,7 @@ const name = authStore.user.user.username
   }
   .right-stuffs {
     margin-left: auto;
+    margin-right: 8px;
   }
   .el-dropdown-link {
     display: flex;
