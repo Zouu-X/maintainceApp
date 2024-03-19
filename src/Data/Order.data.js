@@ -2,7 +2,7 @@ export const OrderData = [
   {
     id: '1', // 工单ID
     title: '测试工单', // 标题
-    dealer: 'Worker', // 处理人
+    dealer: 'admin', // 处理人
     prio: '2', // 优先级 2=正常
     status: '1', // 状态 1=进行中 2=结束
     creator: 'admin', // 创建人

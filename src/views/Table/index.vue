@@ -1,38 +1,39 @@
 <script setup>
-import { ref } from 'vue';
+import {computed, ref} from 'vue';
 import {CirclePlus, MessageBox, Search, User} from "@element-plus/icons-vue";
 import {OrderData} from "../../Data/Order.data.js";
+import { useRouter, useRoute } from 'vue-router';
+
+const router = useRouter();
+const route = useRoute();
+// import {router} from "../../router/index.js";
+const AllList = ref(OrderData)
 const selected = ref("1")
 const input = ref("")
-const tableData = [
-  {
-    date: '2016-05-03',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-02',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-04',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-01',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-]
+const navigate = (listType) => {
+  router.push({ path: '/table', query: { listType } });
+};
+
+const tableData = computed(() => {
+  if (route.query.listType === 'pending') {
+    return AllList.value.filter(order => order.status === '1' && order.dealer === 'admin')
+  } else {
+    return AllList.value
+  }
+});
 </script>
 
 <template>
   <div class="container">
     <div class="btn-bar">
-      <el-button  :icon="User">我的待办</el-button>
-      <el-button  :icon="MessageBox">所有工单</el-button>
+      <el-button
+          :icon="User"
+          @click="navigate('pending')"
+      >我的待办</el-button>
+      <el-button
+          :icon="MessageBox"
+          @click="navigate('all')"
+      >所有工单</el-button>
     </div>
   </div>
   <div class="container">
@@ -58,8 +59,8 @@ const tableData = [
       </div>
     </div>
 
-      <div class="table">
-        <el-table :data="OrderData" stripe border style="width: 100%">
+    <div class="table mgb-10">
+        <el-table :data="tableData" stripe border style="width: 100%">
           <el-table-column prop="id" label="工单ID" />
           <el-table-column prop="title" label="标题" />
           <el-table-column prop="dealer" label="处理人" width="160" />
@@ -90,6 +91,13 @@ const tableData = [
           </el-table-column>
         </el-table>
       </div>
+    <div class="page-info">
+      <div class="item-num">
+        共有{{ OrderData.length }}条
+      </div>
+      <el-pagination background layout="prev, pager, next" :total="100" />
+    </div>
+
 
 
   </div>
@@ -111,6 +119,16 @@ const tableData = [
 
 .mgb-10 {
   margin-bottom: 10px;
+}
+.page-info {
+  display: flex;
+  justify-content: space-between; /* 让 item-num 和 el-pagination 两端对齐 */
+  align-items: center; /* 保持垂直居中 */
+}
+.item-num {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(96, 98, 102);
 }
 </style>
 
