@@ -17,7 +17,7 @@
         </el-icon>
         <span slot="title" class="menu-font">首页</span>
       </el-menu-item>
-      <el-menu-item index="/form">
+      <el-menu-item index="/table">
         <el-icon>
           <Edit />
         </el-icon>
