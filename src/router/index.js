@@ -24,7 +24,16 @@ export const router = createRouter({
       }
     },
     { path: '/equipment', component: Equipment},
-    { path: '/table', component: Table},
+    { path: '/table',
+      component: Table,
+      beforeEnter: (to, from, next) => {
+      if (!to.query.listType) {
+        next({ path: '/table', query: { listType: 'pending'} })
+      } else {
+        next()
+      }
+      }
+    },
     { path: '/:pathMatch(.*)*', redirect: '/' },
     { path: '/test', component: Todo}
   ]
