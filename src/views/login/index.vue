@@ -11,11 +11,11 @@ const loginForm = reactive({
 const rules = reactive({
   username: [
     { require: true, message: '请输入账户', trigger: 'blur' },
-    { min: 3, max: 10, message: '长度在3-10个字符的账户', trigger: 'blur' }
+    { min: 3, max: 10, message: '请输入长度在3-10个字符的用户名', trigger: 'blur' }
   ],
   password: [
     { require: true, message: '请输入密码', trigger: 'blur' },
-    { min: 6, max: 15, message: '长度在6-15个字符的密码', trigger: 'blur' }
+    { min: 6, max: 15, message: '请输入长度在6-15个字符的密码', trigger: 'blur' }
   ],
 })
 const formRef = ref(null)
@@ -38,12 +38,13 @@ const resetForm = () => {
 
 <template>
   <div class="login-container">
-    <h2>Login Page</h2>
+    <h2>工业装备运维APP</h2>
+<!--    <h2>登录页面</h2>-->
     <el-form label-position="top" ref="formRef" :model="loginForm" :rules="rules" class="login-form">
-      <el-form-item label="Username" prop="username">
+      <el-form-item label="用户名" prop="username">
         <el-input v-model="loginForm.username"></el-input>
       </el-form-item>
-      <el-form-item label="Password" prop="password">
+      <el-form-item label="密码" prop="password">
         <el-input type="password" v-model="loginForm.password"></el-input>
       </el-form-item>
       <el-form-item>
