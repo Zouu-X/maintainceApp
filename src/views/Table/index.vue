@@ -84,18 +84,18 @@ const tableData = computed(() => {
           <el-table-column fixed="right" label="Operations" width="120">
             <template #default>
               <el-button link type="primary" size="small" @click="handleClick"
-              >Detail</el-button
+              >详情</el-button
               >
-              <el-button link type="primary" size="small">Edit</el-button>
+              <el-button link type="primary" size="small">编辑</el-button>
             </template>
           </el-table-column>
         </el-table>
       </div>
     <div class="page-info">
       <div class="item-num">
-        共有{{ OrderData.length }}条
+        共有{{ tableData.length }}条
       </div>
-      <el-pagination background layout="prev, pager, next" :total="100" />
+      <el-pagination background layout="prev, pager, next" :total="3" />
     </div>
 
 

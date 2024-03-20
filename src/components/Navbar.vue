@@ -32,7 +32,7 @@ const name = authStore.user.user.username
           <el-dropdown-menu>
             <el-dropdown-item @click.prevent="authStore.logout()">
               <LogoutIcon />
-              Log out
+              登出
             </el-dropdown-item>
           </el-dropdown-menu>
         </template>

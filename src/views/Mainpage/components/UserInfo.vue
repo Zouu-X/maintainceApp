@@ -8,7 +8,7 @@ const role = authStore.user.user.role || '访客'
 <template>
   <el-card shadow="hover" class="mgb12" style="height: 252px">
     <div class="user-info">
-      <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
+      <el-avatar size='large' src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
       <div class="user-info-cont">
         <div class="user-info-name">{{ name }}</div>
         <div>{{ role }}</div>
@@ -16,11 +16,11 @@ const role = authStore.user.user.role || '访客'
     </div>
     <div class="user-info-list">
       上次登录时间：
-      <span>2022-10-01</span>
+      <span>2024年3月21日</span>
     </div>
     <div class="user-info-list">
       上次登录地点：
-      <span>东莞</span>
+      <span>北京</span>
     </div>
   </el-card>
 </template>
