@@ -21,6 +21,7 @@ const tableData = computed(() => {
     return AllList.value
   }
 });
+
 </script>
 
 <template>
@@ -29,10 +30,12 @@ const tableData = computed(() => {
       <el-button
           :icon="User"
           @click="navigate('pending')"
+          :type="route.query.listType === 'pending' ? 'primary' : 'default'"
       >我的待办</el-button>
       <el-button
           :icon="MessageBox"
           @click="navigate('all')"
+          :type="route.query.listType === 'all' ? 'primary' : 'default'"
       >所有工单</el-button>
     </div>
   </div>
